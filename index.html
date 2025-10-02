@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Traineeks</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <header class="header">
+      <div class="user">
+        <div class="logo">TRAINEEKS</div>
+      </div>
+    </header>
+
+    <aside class="sidebar">
+      <ul>
+        <li><a href="#">🏠</a></li>
+        <li><a href="#">⚙️</a></li>
+        <li><a href="#">📊</a></li>
+        <li><a href="#">🔥</a></li>
+      </ul>
+    </aside>
+
+    <!-- Contenedor principal -->
+    <div class="main">
+      <div class="menus">
+        <!-- Menú 1 -->
+        <div class="">
+          <div class="menu-header">
+            <span class="menu-title">MENÚ 1:</span> DÍAS DE ENTRENO
+          </div>
+          <div class="menu">
+            <div class="total">0 Kcal</div>
+            <div class="macros">
+              <div><span>Proteínas</span><span>0g</span></div>
+              <div><span>Carbohidratos</span><span>0g</span></div>
+              <div><span>Grasas</span><span>0g</span></div>
+            </div>
+          </div>
+          <div class="add-btn">+ AÑADIR COMIDA</div>
+        </div>
+
+        <!-- Menú 2 -->
+        <div class="">
+          <div class="menu-header">
+            <span class="menu-title">MENÚ 2:</span> ¡AHORA TÚ!
+          </div>
+          <div class="menu">
+            <div class="total">0 Kcal</div>
+            <div class="macros">
+              <div><span>Proteínas</span><span>0g</span></div>
+              <div><span>Carbohidratos</span><span>0g</span></div>
+              <div><span>Grasas</span><span>0g</span></div>
+            </div>
+          </div>
+          <div class="add-btn">+ AÑADIR COMIDA</div>
+        </div>
+      </div>
+      <div class="main-aside">
+        <div class="main-aside-header">
+          <h3>Alimentos</h3>
+          <button id="newFood" class="btn">NUEVO</button>
+        </div>
+        <div>
+          items
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <dialog id="favDialog">
+      <form method="dialog">
+        <section>
+          <p>
+            <label for="food">Favorite animal:</label>
+            <select id="food">
+              <option></option>
+              <option>Brine shrimp</option>
+              <option>Red panda</option>
+              <option>Spider monkey</option>
+            </select>
+          </p>
+        </section>
+        <menu>
+          <!-- <button id="cancel" type="reset">Cancel</button> -->
+          <!-- <button type="submit">Confirm</button> -->
+          <button id="prev-tab-btn">Anterior</button>
+          <button id="next-tab-btn">Siguiente</button>
+        </menu>
+      </form>
+    </dialog>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

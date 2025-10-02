@@ -1,0 +1,259 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  display: flex;
+  background: #f7f7f7;
+  color: #333;
+}
+
+/* === Sidebar === */
+.sidebar {
+  width: 90px;
+  background: #111;
+  color: white;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 75px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin: 20px 0;
+}
+
+.sidebar a {
+  color: #ccc;
+  font-size: 20px;
+  text-decoration: none;
+  display: block;
+  transition: 0.2s;
+}
+
+.sidebar a:hover {
+  color: #fff;
+}
+
+
+/* === Main container === */
+.main {
+  height: 100vh;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.main-aside {
+  width: 300px;
+  background: #cccc;
+  color: white;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 75px;
+}
+
+.main-aside .btn {
+  background: red;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  padding: 10px 17px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  box-shadow: 0px 5px 10px 2px rgba(204, 9, 9, 0.342);
+}
+
+.main-aside .btn:hover {
+  background: #333;
+}
+
+.main-aside-header {
+  align-items: center;
+  display: flex;
+  color: #333;
+  gap: 10px;
+  padding-bottom: 10px;
+}
+
+/* === Header === */
+.header {
+  height: 50px;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f2f2f2;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header .logo {
+  font-weight: bold;
+  background-color: #e02c2c;
+  color: white;
+  padding-inline: 5px;
+}
+
+.header .user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+}
+
+.header img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+.menus {
+  padding-top: 80px;
+  padding-left: 30px;
+  display: flex;
+  gap: 20px;
+}
+
+.menu {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 320px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.menu-title {
+  font-size: 16px;
+  color: gray;
+}
+
+.menu-header {
+  background: #222;
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.menu-body {
+  font-size: 14px;
+}
+
+.menu-body .total {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.macros {
+  margin-bottom: 10px;
+}
+
+.macros div {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.add-btn {
+  text-align: center;
+  background: #ddd;
+  padding: 10px;
+  border-radius: 16px;
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.add-btn:hover {
+  background: #ccc;
+}
+
+dialog {
+  align-self: center;
+  justify-self: center;
+  border: none;
+  border-radius: 12px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  font-size: 14px;
+  animation: fadeIn 0.3s ease;
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+dialog form section {
+  margin-bottom: 15px;
+}
+
+dialog label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+dialog select {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+dialog menu {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+#cancel {
+  background: #ccc;
+  color: #000;
+}
+
+#cancel:hover {
+  background: #999;
+}
+
+dialog [type="submit"] {
+  background: #28a745;
+  color: #fff;
+}
+
+dialog [type="submit"]:hover {
+  background: #1e7e34;
+}
