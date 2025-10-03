@@ -56,7 +56,7 @@ body {
 }
 
 .main-aside {
-  width: 300px;
+  width: 320px;
   background: #cccc;
   color: white;
   min-height: 100%;
@@ -64,6 +64,8 @@ body {
   flex-direction: column;
   align-items: center;
   padding-top: 75px;
+  padding-bottom: 40px;
+  overflow-y: auto;
 }
 
 .main-aside .btn {
@@ -84,15 +86,20 @@ body {
 }
 
 .main-aside-header {
+  width: 80%;
   align-items: center;
+  justify-content: center;
   display: flex;
   color: #333;
   gap: 10px;
+  margin-bottom: 25px;
   padding-bottom: 10px;
+  border-bottom: 1px solid #b9b9b9;
 }
 
 /* === Header === */
 .header {
+  z-index: 20;
   height: 50px;
   width: 100%;
   position: absolute;
@@ -375,6 +382,7 @@ body {
   justify-content: center;
   height: 70%;
   gap: 20px;
+  padding-top: 55px;
 }
 
 .form-1 h4 {
@@ -388,6 +396,38 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 16px;
+}
+
+.card-macros {
+  gap: 10px;
+  display: flex;
+}
+
+.type-allergens {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-right: 10px;
+  border-right: 1px solid #cccc;
+}
+
+.type-allergens span, .micronutrients span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.type-allergens h4, .micronutrients h4 {
+  font-weight: 500;
+  color: #888888f8;
+  font-size: 0.7rem;
+}
+
+.micronutrients {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .food-card {
@@ -411,6 +451,7 @@ body {
 }
 
 .food-img {
+  max-width: 240px;
   width: 100%;
   height: 140px;
   object-fit: cover;
@@ -420,14 +461,18 @@ body {
 
 .food-info {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 10px;
   width: 100%;
   font-size: 14px;
   color: #333;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
 }
 
 .food-name {
-  font-weight: bold;
+  font-weight: bold
 }
 
 .food-calories {

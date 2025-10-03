@@ -7,13 +7,14 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <!-- Sidebar -->
+    <!-- Header -->
     <header class="header">
       <div class="user">
         <div class="logo">TRAINEEKS</div>
       </div>
     </header>
-
+    
+    <!-- Sidebar -->
     <aside class="sidebar">
       <ul>
         <li><a href="#">🏠</a></li>
@@ -23,7 +24,7 @@
       </ul>
     </aside>
 
-    <!-- Contenedor principal -->
+    <!-- Main -->
     <div class="main">
       <div class="menus">
         <!-- Menú 1 -->
@@ -58,6 +59,8 @@
           <div class="add-btn">+ AÑADIR COMIDA</div>
         </div>
       </div>
+
+      <!-- Aside donde se muestran los alimentos -->
       <div class="main-aside">
         <div class="main-aside-header">
           <h3>Alimentos</h3>
@@ -69,6 +72,8 @@
 
     <dialog id="favDialog" class="dialog">
       <h2 class="dialog-title">CREAR RECETA O ALIMENTO</h2>
+      
+      <!-- Primer paso del modal -->
       <div class="form-1">
         <div>
           <button class="create-food-btn" disabled>CREAR RECETA</button>
@@ -78,29 +83,33 @@
         </div>
         <h4>Elige si quieres crear una nueva receta o alimento</h3>
       </div>
+
+      <!-- Segundo paso del modal: Micronutrientes -->
       <form method="dialog" class="dialog-form form-2 form-hidden">
         <h3>Micronutrientes</h3>
         <label for="iron" class="dialog-label">
           <span>Hierro</span>
-          <input id="iron" placeholder="0" type="text" class="dialog-input" />
+          <input required id="iron" placeholder="0" type="number" class="dialog-input" />
         </label>
         <label for="vitaminC" class="dialog-label">
           <span>Vitamina C</span>
-          <input id="vitaminC" placeholder="0" type="text" class="dialog-input" />
+          <input required id="vitaminC" placeholder="0" type="number" class="dialog-input" />
         </label>
         <label for="vitaminD" class="dialog-label">
           <span>Vitamina D</span>
-          <input id="vitaminD" placeholder="0" type="text" class="dialog-input" />
+          <input required id="vitaminD" placeholder="0" type="number" class="dialog-input" />
         </label>
       </form>
+
+      <!-- Tercer paso del modal: Valores nutricionales -->
       <form method="dialog" class="dialog-form form-3 form-hidden">
         <label for="name" class="dialog-label">
           <span>Nombre del alimento</span>
-          <input id="name" placeholder="Ej,: Pavo" type="text" class="dialog-input" />
+          <input required id="name" placeholder="Ej,: Pavo" type="text" class="dialog-input" />
         </label>
         <label for="calories" class="dialog-label">
           <span>Valores nutricionales</span>
-          <input id="calories" placeholder="Kcal" type="text" class="dialog-input" />
+          <input required id="calories" placeholder="Kcal" type="number" class="dialog-input" />
         </label>
         <section>
           <label for="type" class="dialog-label">
@@ -127,11 +136,13 @@
           </label>
         </section>
       </form>
+
+      <!-- Cuarto paso del modal: Porciones -->
       <form method="dialog" class="dialog-form form-4 form-hidden">
        <section class="dialog-portion">
           <label for="portion" class="dialog-label">
             <span>Porción</span>
-            <select id="portion" class="dialog-select">
+            <select required id="portion" class="dialog-select">
               <option></option>
               <option>Bolsa</option>
               <option>Bolsita</option>
@@ -143,6 +154,8 @@
           <h4 class="portion-text">Añadir porciones que normalmente uses te hará aún mas fácil crear recetas y dietas. Ej.: 1 loncha equivale a 10g de pavo</h4>
         </section>
       </form>
+
+      <!-- Quinto paso del modal: Foto -->
       <form method="dialog" class="dialog-form form-5 form-hidden">
         <label for="photo" class="dialog-label">
           <span>Subir una foto</span>
@@ -152,6 +165,7 @@
           <img id="preview" src="" alt="Vista previa" style="max-width:200px; display:none;" />
         </div>
       </form>
+
       <button id="cancel" type="reset" class="btn-cancel">
         X
       </button>
