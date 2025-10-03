@@ -63,33 +63,106 @@
           <h3>Alimentos</h3>
           <button id="newFood" class="btn">NUEVO</button>
         </div>
-        <div>
-          items
-        </div>
-      </div>
+        <ul id="foodList"></ul>
       </div>
     </div>
 
-    <dialog id="favDialog">
-      <form method="dialog">
-        <section>
-          <p>
-            <label for="food">Favorite animal:</label>
-            <select id="food">
-              <option></option>
-              <option>Brine shrimp</option>
-              <option>Red panda</option>
-              <option>Spider monkey</option>
-            </select>
-          </p>
-        </section>
-        <menu>
-          <!-- <button id="cancel" type="reset">Cancel</button> -->
-          <!-- <button type="submit">Confirm</button> -->
-          <button id="prev-tab-btn">Anterior</button>
-          <button id="next-tab-btn">Siguiente</button>
-        </menu>
+    <dialog id="favDialog" class="dialog">
+      <h2 class="dialog-title">CREAR RECETA O ALIMENTO</h2>
+      <div class="form-1">
+        <div>
+          <button class="create-food-btn" disabled>CREAR RECETA</button>
+          <button type="button" class="create-food-btn check-btn">
+            CREAR ALIMENTO
+          </button>
+        </div>
+        <h4>Elige si quieres crear una nueva receta o alimento</h3>
+      </div>
+      <form method="dialog" class="dialog-form form-2 form-hidden">
+        <h3>Micronutrientes</h3>
+        <label for="iron" class="dialog-label">
+          <span>Hierro</span>
+          <input id="iron" placeholder="0" type="text" class="dialog-input" />
+        </label>
+        <label for="vitaminC" class="dialog-label">
+          <span>Vitamina C</span>
+          <input id="vitaminC" placeholder="0" type="text" class="dialog-input" />
+        </label>
+        <label for="vitaminD" class="dialog-label">
+          <span>Vitamina D</span>
+          <input id="vitaminD" placeholder="0" type="text" class="dialog-input" />
+        </label>
       </form>
+      <form method="dialog" class="dialog-form form-3 form-hidden">
+        <label for="name" class="dialog-label">
+          <span>Nombre del alimento</span>
+          <input id="name" placeholder="Ej,: Pavo" type="text" class="dialog-input" />
+        </label>
+        <label for="calories" class="dialog-label">
+          <span>Valores nutricionales</span>
+          <input id="calories" placeholder="Kcal" type="text" class="dialog-input" />
+        </label>
+        <section>
+          <label for="type" class="dialog-label">
+            <span>Tipo</span>
+            <select id="type" class="dialog-select">
+              <option></option>
+              <option>Carnes</option>
+              <option>Huevos</option>
+              <option>Legumbres</option>
+              <option>Bebidas</option>
+            </select>
+          </label>
+        </section>
+        <section>
+          <label for="allergens" class="dialog-label">
+            <span>Alérgenos:</span>
+            <select id="allergens" class="dialog-select">
+              <option></option>
+              <option>Gluten</option>
+              <option>Soja</option>
+              <option>Huevos</option>
+              <option>Apio</option>
+            </select>
+          </label>
+        </section>
+      </form>
+      <form method="dialog" class="dialog-form form-4 form-hidden">
+       <section class="dialog-portion">
+          <label for="portion" class="dialog-label">
+            <span>Porción</span>
+            <select id="portion" class="dialog-select">
+              <option></option>
+              <option>Bolsa</option>
+              <option>Bolsita</option>
+              <option>Copa</option>
+              <option>Pizca</option>
+            </select>
+          </label>
+          <div class="portion-add-button">+ Añadir porción</div>
+          <h4 class="portion-text">Añadir porciones que normalmente uses te hará aún mas fácil crear recetas y dietas. Ej.: 1 loncha equivale a 10g de pavo</h4>
+        </section>
+      </form>
+      <form method="dialog" class="dialog-form form-5 form-hidden">
+        <label for="photo" class="dialog-label">
+          <span>Subir una foto</span>
+          <input id="photo" type="file" class="dialog-input" accept="image/*" />
+        </label>
+        <div class="preview-container">
+          <img id="preview" src="" alt="Vista previa" style="max-width:200px; display:none;" />
+        </div>
+      </form>
+      <button id="cancel" type="reset" class="btn-cancel">
+        X
+      </button>
+      <menu class="dialog-actions">
+        <button type="button" class="prev-tab-btn btn-prev">
+          ANTERIOR
+        </button>
+        <button type="button" class="next-tab-btn btn-next">
+          SIGUIENTE
+        </button>
+      </menu>
     </dialog>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>

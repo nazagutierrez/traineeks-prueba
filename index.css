@@ -76,10 +76,11 @@ body {
   cursor: pointer;
   font-size: 14px;
   box-shadow: 0px 5px 10px 2px rgba(204, 9, 9, 0.342);
+  transition: all 0.2s ease;
 }
 
 .main-aside .btn:hover {
-  background: #333;
+  background: rgb(168, 0, 0);
 }
 
 .main-aside-header {
@@ -190,70 +191,251 @@ body {
   background: #ccc;
 }
 
-dialog {
+.dialog {
+  position: relative;
   align-self: center;
   justify-self: center;
   border: none;
-  border-radius: 12px;
-  padding: 20px;
-  width: 300px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-  font-size: 14px;
+  border-radius: 16px;
+  padding: 30px 40px;
+  width: 800px;
+  min-height: 600px;
+  max-width: 90%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  font-size: 15px;
+  background: #fff;
   animation: fadeIn 0.3s ease;
 }
 
-dialog::backdrop {
-  background: rgba(0, 0, 0, 0.4);
+.dialog[open] {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dialog::backdrop {
+  background: rgba(0, 0, 0, 0.45);
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: scale(0.9);
+    transform: translateY(-15px) scale(0.95);
   }
   to {
     opacity: 1;
-    transform: scale(1);
+    transform: translateY(0) scale(1);
   }
 }
 
-dialog form section {
-  margin-bottom: 15px;
-}
-
-dialog label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: bold;
-}
-
-dialog select {
-  width: 100%;
-  padding: 8px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-}
-
-dialog menu {
+.dialog-form {
+  padding-inline: 100px;
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.dialog-title {
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+
+.dialog-label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  color: #333;
+  gap: 6px;
+}
+
+.dialog-input,
+.dialog-select {
+  padding: 10px 12px;
+  border-radius: 16px;
+  border: 2px solid #ccccccb4;
+  font-size: 14px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.dialog-input:focus,
+.dialog-select:focus {
+  outline: none;
+  border-color: rgba(0, 0, 0, 0.658);
+  box-shadow: 0 0 10px 3px rgba(110, 110, 110, 0.103);
+}
+
+.dialog-actions {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  gap: 12px;
+}
+
+.dialog-portion {
+  display: flex;
+  flex-direction: column;
   gap: 10px;
 }
 
-#cancel {
+.portion-add-button {
   background: #ccc;
-  color: #000;
+  font-weight: 700;
+  color: #888888;
+  border-radius: 16px;
+  padding: 10px 10px;
 }
 
-#cancel:hover {
-  background: #999;
+.portion-text {
+  text-align: center;
+  font-weight: 400;
+  color: #888888;
 }
 
-dialog [type="submit"] {
-  background: #28a745;
-  color: #fff;
+.btn-cancel {
+  padding: 15px 20px 20px 30px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: black;
+  color: white;
+  border: none;
+  font-size: 1rem;
+  border-bottom-left-radius: 100px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.btn-cancel:hover {
+  opacity: 80%;
 }
 
-dialog [type="submit"]:hover {
-  background: #1e7e34;
+.btn-prev {
+  padding: 15px 60px;
+  background: black;
+  color: white;
+  border: none;
+  font-size: .9rem;
+  font-weight: 600;
+  border-top-right-radius: 100px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.btn-prev:hover {
+  opacity: 80%;
+}
+
+.btn-next {
+  padding: 15px 60px;
+  background: red;
+  color: white;
+  border: none;
+  font-size: .9rem;
+  font-weight: 600;
+  border-top-left-radius: 100px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.btn-next:hover {
+  background: rgb(175, 0, 0);
+}
+
+.form-hidden {
+  display: none !important;
+}
+
+.create-food-btn {
+  background-color: transparent;
+  border: 2px solid #cccc;
+  height: 200px;
+  width: 200px;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 16px;
+  padding: 20px;
+  margin-inline: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.check-btn-border {
+  border: 2px solid red;
+}
+
+.create-food-btn:hover {
+  border: 2px solid black;
+}
+
+.form-1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70%;
+  gap: 20px;
+}
+
+.form-1 h4 {
+  font-weight: 400;
+}
+
+#foodList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.food-card {
+  min-width: 260px;
+  color: rgb(61, 61, 61);
+  font-weight: 600;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: .9rem;
+  transition: transform 0.2s ease;
+  padding: 12px;
+}
+
+.food-card:hover {
+  transform: translateY(-4px);
+}
+
+.food-img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.food-info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 14px;
+  color: #333;
+}
+
+.food-name {
+  font-weight: bold;
+}
+
+.food-calories {
+  color: #e63946;
+  font-weight: 500;
+}
+
+.food-type {
+  font-style: italic;
+  color: #555;
 }
